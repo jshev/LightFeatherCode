@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+</head>
+
+<body>
+  <form action="/api/submit" method="post">
+    <h1>Notification Form</h1>
+
+    First Name: <input name="firstName" type="text" required /> <br>
+    Last Name: <input name="lastName" type="text" required /> <br> <br>
+
+    How would you prefer to be notified? <br>
+
+    <input type="checkbox" id='emailBox' name="emailBox" value="email">
+    <label for="emailBox"> Email</label> <br>
+    Email: <input name="email" type="text" /> <br>
+
+    <input type="checkbox" id='phone' name="phoneBox" value="phone">
+    <label for="phoneBox"> Phone</label> <br>
+    Phone: <input name="phone" type="text" /> <br> <br>
+
+    Supervisor:
+    <select name="select" id="selectSuper" required>
+      <option value="">Select...</option>
+    </select> <br> <br>
+
+    <input type="submit" />
+  </form>
+</body>
+
+</html>
+
+<script>
+  var objArray = [{
+      "id": "1",
+      "phone": "204-798-9969",
+      "jurisdiction": "u",
+      "identificationNumber": "d4900a18-a304-42c6-a8e5-a6c8c3f17bc0",
+      "firstName": "Karson",
+      "lastName": "Olson"
+    },
+    {
+      "id": "3",
+      "phone": "(255) 885-3433",
+      "jurisdiction": "u",
+      "identificationNumber": "3e662eb4-4434-499a-a64e-dc5ca9da87e5",
+      "firstName": "Lavon",
+      "lastName": "Deckow"
+    },
+    {
+      "id": "4",
+      "phone": "727-659-7861",
+      "jurisdiction": "b",
+      "identificationNumber": "7d8a9ed8-685f-4408-92f1-e13a7c118d97",
+      "firstName": "Elijah",
+      "lastName": "Cremin"
+    },
+    {
+      "id": "10",
+      "phone": "800.768.4032 x7410",
+      "jurisdiction": "x",
+      "identificationNumber": "f3fa46a5-816c-4704-8159-195d88e8d4f3",
+      "firstName": "Maribel",
+      "lastName": "D'Amore"
+    },
+    {
+      "id": "12",
+      "phone": "(770) 738-8996 x876",
+      "jurisdiction": "t",
+      "identificationNumber": "771f6af3-357b-4c8b-b2b6-6304059bb90c",
+      "firstName": "Garnett",
+      "lastName": "Lockman"
+    },
+    {
+      "id": "13",
+      "phone": "1-206-231-3800 x686",
+      "jurisdiction": "l",
+      "identificationNumber": "5b6a4232-c6ec-4cad-8b1e-a8ae3f1572d4",
+      "firstName": "Dorothea",
+      "lastName": "McLaughlin"
+    },
+    {
+      "id": "14",
+      "phone": "(369) 886-4293 x407",
+      "jurisdiction": "g",
+      "identificationNumber": "a99c5bb7-de6e-413e-b833-8ec43aba1444",
+      "firstName": "Clifton",
+      "lastName": "Ziemann"
+    },
+    {
+      "id": "15",
+      "phone": "846.840.9245",
+      "jurisdiction": "h",
+      "identificationNumber": "9d7d713f-1d19-42c5-84a7-80b0fc6dac63",
+      "firstName": "Lisa",
+      "lastName": "Hoppe"
+    },
+    {
+      "id": "16",
+      "phone": "384.235.3768 x8963",
+      "jurisdiction": "q",
+      "identificationNumber": "a1cef699-d046-4122-bbb7-f331c78e6b17",
+      "firstName": "Ezequiel",
+      "lastName": "Collier"
+    },
+    {
+      "id": "17",
+      "phone": "(443) 454-5443 x68365",
+      "jurisdiction": "d",
+      "identificationNumber": "db8b0e59-21bc-46b9-87c0-da87e4699b83",
+      "firstName": "Ida",
+      "lastName": "Braun"
+    },
+    {
+      "id": "18",
+      "phone": "(337) 222-2549 x5061",
+      "jurisdiction": "b",
+      "identificationNumber": "68667498-aebf-483f-ab4e-f5a8babb2fbf",
+      "firstName": "Terrell",
+      "lastName": "Tremblay"
+    },
+    {
+      "id": "19",
+      "phone": "(873) 264-1831",
+      "jurisdiction": "b",
+      "identificationNumber": "135a738d-fa9b-4b48-aa99-b59f26ff918d",
+      "firstName": "Kobe",
+      "lastName": "Denesik"
+    },
+    {
+      "id": "20",
+      "phone": "208-574-0616",
+      "jurisdiction": "e",
+      "identificationNumber": "8fd5cdc7-16d7-4e10-a605-845d8b555e31",
+      "firstName": "Donny",
+      "lastName": "Zieme"
+    },
+    {
+      "id": "22",
+      "phone": "1-739-541-5867",
+      "jurisdiction": "x",
+      "identificationNumber": "2230ff81-99ac-44be-add6-bd6a859f9075",
+      "firstName": "Lydia",
+      "lastName": "Schamberger"
+    },
+    {
+      "id": "24",
+      "phone": "1-996-968-2619",
+      "jurisdiction": "l",
+      "identificationNumber": "e532425b-6195-43df-882c-91e944d88b27",
+      "firstName": "Rodrick",
+      "lastName": "Gutmann"
+    },
+    {
+      "id": "27",
+      "phone": "767.865.4584 x59664",
+      "jurisdiction": "b",
+      "identificationNumber": "f030dc3a-78d7-44ea-9543-6e54c01dc604",
+      "firstName": "Jaquan",
+      "lastName": "Gerhold"
+    },
+    {
+      "id": "28",
+      "phone": "(281) 928-5046 x77931",
+      "jurisdiction": "i",
+      "identificationNumber": "b7c08b1b-e035-42a7-8b61-9e96e69cf841",
+      "firstName": "Kathlyn",
+      "lastName": "Hane"
+    },
+    {
+      "id": "29",
+      "phone": "(362) 870-5006 x14100",
+      "jurisdiction": "x",
+      "identificationNumber": "7e47f986-ff97-40db-8960-7b57c9bcc85e",
+      "firstName": "Zena",
+      "lastName": "Brakus"
+    },
+    {
+      "id": "30",
+      "phone": "702-213-9844 x70167",
+      "jurisdiction": "t",
+      "identificationNumber": "16e35b7b-32ce-4738-9d94-9358c7ad905a",
+      "firstName": "Jett",
+      "lastName": "Volkman"
+    },
+    {
+      "id": "31",
+      "phone": "224-725-6364 x4150",
+      "jurisdiction": "i",
+      "identificationNumber": "14cc9675-c705-4206-9fb2-458df372796a",
+      "firstName": "Bruce",
+      "lastName": "Bechtelar"
+    },
+    {
+      "id": "32",
+      "phone": "(388) 861-0894",
+      "jurisdiction": "k",
+      "identificationNumber": "be5f9476-bb46-42f9-9200-cab4edf5a8da",
+      "firstName": "Lucious",
+      "lastName": "Jacobi"
+    },
+    {
+      "id": "33",
+      "phone": "909.665.7247 x193",
+      "jurisdiction": "z",
+      "identificationNumber": "411488f2-2e5b-4de6-8f0b-16e812fc1cef",
+      "firstName": "Ricky",
+      "lastName": "Oberbrunner"
+    },
+    {
+      "id": "34",
+      "phone": "571.377.1305",
+      "jurisdiction": "m",
+      "identificationNumber": "70f47079-da10-4e9a-8dde-247e9d01656a",
+      "firstName": "Lavern",
+      "lastName": "Huels"
+    },
+    {
+      "id": "35",
+      "phone": "(840) 732-8176 x309",
+      "jurisdiction": "p",
+      "identificationNumber": "36f4d165-5a5f-4d96-a32a-ab8f2c8ec43b",
+      "firstName": "Kirsten",
+      "lastName": "Wyman"
+    },
+    {
+      "id": "36",
+      "phone": "1-420-610-9903 x2181",
+      "jurisdiction": "e",
+      "identificationNumber": "2adef844-c25a-4a23-aceb-44a514af681f",
+      "firstName": "Pascale",
+      "lastName": "Raynor"
+    },
+    {
+      "id": "37",
+      "phone": "424.448.9247",
+      "jurisdiction": "u",
+      "identificationNumber": "b5f5fc03-6dad-4e88-afbf-4c9544030c73",
+      "firstName": "Dolores",
+      "lastName": "Beer"
+    },
+    {
+      "id": "38",
+      "phone": "(757) 405-9114",
+      "jurisdiction": "n",
+      "identificationNumber": "2cc2b4a0-afda-4808-82d6-09d92fd39d33",
+      "firstName": "Cali",
+      "lastName": "Schulist"
+    },
+    {
+      "id": "41",
+      "phone": "(481) 244-4289",
+      "jurisdiction": "i",
+      "identificationNumber": "f3dba247-9766-4196-9691-7c2ab4c1419e",
+      "firstName": "Angelina",
+      "lastName": "Bartell"
+    },
+    {
+      "id": "43",
+      "phone": "1-315-651-5894 x54185",
+      "jurisdiction": "c",
+      "identificationNumber": "6e8bc7af-005a-47af-b88c-3650363c3dde",
+      "firstName": "Laverna",
+      "lastName": "Hermiston"
+    },
+    {
+      "id": "44",
+      "phone": "(327) 382-9141 x1705",
+      "jurisdiction": "y",
+      "identificationNumber": "53c29122-b17f-4003-b251-656287cfc976",
+      "firstName": "Rashad",
+      "lastName": "Sauer"
+    },
+    {
+      "id": "45",
+      "phone": "(405) 705-2778",
+      "jurisdiction": "q",
+      "identificationNumber": "5586c6fd-aff6-4dc4-8ffd-0cb07e68b99b",
+      "firstName": "Makayla",
+      "lastName": "Larson"
+    },
+    {
+      "id": "46",
+      "phone": "857-856-9699",
+      "jurisdiction": "r",
+      "identificationNumber": "86293e2a-898f-4c15-b71c-b37473a7e281",
+      "firstName": "River",
+      "lastName": "Runolfsson"
+    },
+    {
+      "id": "48",
+      "phone": "(770) 219-1058",
+      "jurisdiction": "j",
+      "identificationNumber": "16793dc9-732e-4dd6-bbc0-a79a68725433",
+      "firstName": "Gunner",
+      "lastName": "Wisozk"
+    },
+    {
+      "id": "49",
+      "phone": "(891) 932-8826 x32453",
+      "jurisdiction": "l",
+      "identificationNumber": "f60b3b80-af11-40b0-93bd-dfa86dc17540",
+      "firstName": "Anastacio",
+      "lastName": "Becker"
+    },
+    {
+      "id": "50",
+      "phone": "414.861.1516",
+      "jurisdiction": "u",
+      "identificationNumber": "f430b6d0-a1b1-4e26-8d22-ce969d15fdab",
+      "firstName": "Magdalena",
+      "lastName": "Lehner"
+    }
+  ];
+
+  var select = document.getElementById("selectSuper");
+  var superNames = getFields(objArray, "firstName");
+  var result = superNames.sort();
+
+  for (var i = 0; i < result.length; i++) {
+    var opt = result[i];
+    var el = document.createElement("option");
+    el.textContent = opt;
+    el.value = opt;
+    select.appendChild(el);
+  }
+
+  function getFields(input, field) {
+    var output = [];
+    for (var i = 0; i < input.length; ++i)
+      output.push(input[i][field]);
+    return output;
+  }
+</script>
